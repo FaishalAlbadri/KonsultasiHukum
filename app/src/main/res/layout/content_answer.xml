@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/swipeAnswer"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  tools:context=".AnswerActivity"
+  tools:showIn="@layout/activity_answer">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+      android:id="@+id/txtUser"
+      android:textStyle="bold"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="16dp"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
+      android:paddingLeft="16dp"
+      android:paddingRight="16dp"
+      android:text="Faihsalbadri"
+      android:textColor="@android:color/black"
+      android:textSize="16sp" />
+
+    <TextView
+      android:id="@+id/txtAsk"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="16dp"
+      android:text="@string/bantuan_hukum" />
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:background="@android:color/black" />
+
+
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/rvAnswer"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="12dp" />
+
+  </LinearLayout>
+
+</android.support.v4.widget.SwipeRefreshLayout>

@@ -1,0 +1,36 @@
+<resources>
+  <string name="app_name">Konsultasi Hukum</string>
+  <string name="title_activity_about_us">Tentang Kami</string>
+
+  <string name="about_us">
+    Perkumpulan LBH masyarakat adalah sebuah lembaga bantuan hukum yang hadir langsung
+    ditengah-tengah masyarakat untuk memberikan penyadaran dan pemberdayaan hukum kepada
+    masyarakat. Tujuannya adalah agar masyarakat secara mandiri dapat melakukan advokasi,
+    pendampingan dan pembelajaran atas segala permasalahan hukum, HAM dan hak-hak warganegara
+    yang mereka alami. LBH masyarakat percaya bahwa setiap anggota masyarakat memiliki potensi
+    untuk memberdayakan diri dan lingkungannya sehingga tercipta sebuah gerakan bantuan hukum
+    mandiri, yakni gerakan bantuan hukum dari dan untuk masyarakat.\n\nAlamat:\nJl.Tebet Timur
+    Dalam VI E No.3\nJakarta Selatan 12820\nINDONESIA\n\nTelepon	  : +62 21 837 897
+    66\nFaksimili : +62 21 837 897 67\nSurel	  : contact@lbhmasyarakat.org\n\nSilakan datang
+    atau menelpon ke kantor selama jam konsultasi, yakni: Senin s/d Kamis,09:30-11:30 dan
+    13:00-16:00 WIB.\n\nTwitter   : @LBHMasyarakat\nFacebook  : @LBHM.id\nYoutube   : LBH
+    Masyarakat\nInstagram : @LBHMasyarakat\n\n\n\n
+  </string>
+
+  <string name="bantuan_hukum">Lembaga Bantuan Hukum Masyarakat(LBH Masyarakat) Menemukan banyak
+    individu dan kelompok yang terlupakan, diasingkan, bahkan dibuang hanya karena mereka
+    dianggap berbeda oleh masyarakat umum. Mayoritas orang berlindung atas nama moral untuk
+    melegitimasi perbuatan-perbuatan diskriminatif. Ironisnya, negara, yang seharusnya bertugas
+    untuk melindungi setiap warganya tanpa terkecuali, seakan melakukan pembiaran dan turut melanggengkan diskriminasi. Hal ini dapat terlihat melalui pernyataan, hukum dan kebijakan negara yang tidak mengandung nilai hak asasi manusia\n\n</string>
+
+  <string name="dukung_kami">
+    Lembaga Bantuan Hukum Masyarakat(LBH Masyarakat) Menjembatani keadilan bagi mereka yang
+    dipandang tak sama. Kami percaya dalam ketikadilan kemanusiaan kalah. Bersama mari berjuang
+    melawan ketikadilan, menjaga kemanusiaan, menumbuhkan harapan.\n\nBecause Every Human
+    Matters.\n\nAyo, berkontribusi dalam mewujudkan harapan Indonesia yang demokratis,
+    berkeadialan sosial dan menghormati HAM dengan menyalurkan dukungan semangat dari perjuangan
+    LBH Masyarakat.\n\nDonasi sekarang ke 124-0000-7977-656 (Bank Mandiri) atas nama LEMBAGA
+    BANTUAN HUKUM MASYARAKAT\n\n\n\n</string>
+  <string name="title_activity_forum">Forum</string>
+  <string name="title_activity_answer">Forum</string>
+</resources>

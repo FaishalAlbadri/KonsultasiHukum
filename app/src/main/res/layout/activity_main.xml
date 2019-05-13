@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:paddingBottom="16dp"
+  android:background="#ffffff"
+  tools:context=".MainActivity">
+
+  <ImageView
+    android:id="@+id/imgLogo"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="16dp"
+    android:src="@drawable/logo"
+    app:layout_constraintDimensionRatio="3:1"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageView
+    android:id="@+id/imgPoster"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:src="@drawable/poster"
+    app:layout_constraintDimensionRatio="10:7"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/imgLogo" />
+
+  <ImageView
+    android:id="@+id/imgUsers"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginBottom="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:paddingBottom="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:src="@drawable/ic_humans"
+    app:layout_constraintBottom_toTopOf="@+id/imgGalery"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toLeftOf="@+id/imgHelp"
+    app:layout_constraintTop_toBottomOf="@+id/imgPoster" />
+
+  <ImageView
+    android:id="@+id/imgGalery"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_margin="16dp"
+    android:paddingBottom="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:src="@drawable/ic_galery"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toLeftOf="@+id/imgBlog"
+    app:layout_constraintTop_toBottomOf="@+id/imgUsers" />
+
+  <ImageView
+    android:id="@+id/imgForum"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginBottom="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:paddingBottom="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:src="@drawable/ic_chat"
+    app:layout_constraintBottom_toTopOf="@+id/imgLogout"
+    app:layout_constraintLeft_toRightOf="@+id/imgHelp"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/imgPoster" />
+
+  <ImageView
+    android:id="@+id/imgLogout"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_margin="16dp"
+    android:paddingBottom="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:src="@drawable/ic_logout"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toRightOf="@+id/imgBlog"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/imgForum" />
+
+  <ImageView
+    android:id="@+id/imgHelp"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginBottom="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:paddingBottom="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:src="@drawable/ic_help"
+    app:layout_constraintBottom_toTopOf="@+id/imgBlog"
+    app:layout_constraintLeft_toRightOf="@+id/imgUsers"
+    app:layout_constraintRight_toLeftOf="@+id/imgForum"
+    app:layout_constraintTop_toBottomOf="@+id/imgPoster" />
+
+  <ImageView
+    android:id="@+id/imgBlog"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_margin="16dp"
+    android:paddingBottom="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:src="@drawable/ic_blog"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toRightOf="@+id/imgGalery"
+    app:layout_constraintRight_toLeftOf="@+id/imgLogout"
+    app:layout_constraintTop_toBottomOf="@+id/imgHelp" />
+
+  <TextView
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Tentang Kami"
+    android:textColor="@android:color/black"
+    app:layout_constraintBottom_toBottomOf="@+id/imgUsers"
+    app:layout_constraintLeft_toLeftOf="@+id/imgUsers"
+    app:layout_constraintRight_toRightOf="@+id/imgUsers"
+    app:layout_constraintTop_toBottomOf="@+id/imgUsers" />
+
+  <TextView
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Blog"
+    android:textColor="@android:color/black"
+    app:layout_constraintBottom_toBottomOf="@+id/imgBlog"
+    app:layout_constraintLeft_toLeftOf="@+id/imgBlog"
+    app:layout_constraintRight_toRightOf="@+id/imgBlog"
+    app:layout_constraintTop_toBottomOf="@+id/imgBlog" />
+
+  <TextView
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Logout"
+    android:textColor="@android:color/black"
+    app:layout_constraintBottom_toBottomOf="@+id/imgLogout"
+    app:layout_constraintLeft_toLeftOf="@+id/imgLogout"
+    app:layout_constraintRight_toRightOf="@+id/imgLogout"
+    app:layout_constraintTop_toBottomOf="@+id/imgLogout" />
+
+  <TextView
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Galeri"
+    android:textColor="@android:color/black"
+    app:layout_constraintBottom_toBottomOf="@+id/imgGalery"
+    app:layout_constraintLeft_toLeftOf="@+id/imgGalery"
+    app:layout_constraintRight_toRightOf="@+id/imgGalery"
+    app:layout_constraintTop_toBottomOf="@+id/imgGalery" />
+
+  <TextView
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Bantuan Hukum"
+    android:textColor="@android:color/black"
+    app:layout_constraintBottom_toBottomOf="@+id/imgHelp"
+    app:layout_constraintLeft_toLeftOf="@+id/imgHelp"
+    app:layout_constraintRight_toRightOf="@+id/imgHelp"
+    app:layout_constraintTop_toBottomOf="@+id/imgHelp" />
+
+  <TextView
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Konsultasi Hukum"
+    android:textColor="@android:color/black"
+    app:layout_constraintBottom_toBottomOf="@+id/imgForum"
+    app:layout_constraintLeft_toLeftOf="@+id/imgForum"
+    app:layout_constraintRight_toRightOf="@+id/imgForum"
+    app:layout_constraintTop_toBottomOf="@+id/imgForum" />
+
+</android.support.constraint.ConstraintLayout>

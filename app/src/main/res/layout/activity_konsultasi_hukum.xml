@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:background="#ffffff"
+  android:layout_height="match_parent"
+  tools:context=".KonsultasiHukum">
+
+  <ImageView
+    android:id="@+id/imgForum"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_margin="16dp"
+    android:paddingBottom="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:src="@drawable/ic_konsultasi"
+    app:layout_constraintDimensionRatio="3:2"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toLeftOf="@+id/imgDukung"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageView
+    android:id="@+id/imgDukung"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_margin="16dp"
+    android:paddingBottom="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:src="@drawable/ic_love"
+    app:layout_constraintDimensionRatio="3:2"
+    app:layout_constraintLeft_toRightOf="@+id/imgForum"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Dukung Kami"
+    android:textColor="@android:color/black"
+    app:layout_constraintBottom_toBottomOf="@+id/imgDukung"
+    app:layout_constraintLeft_toLeftOf="@+id/imgDukung"
+    app:layout_constraintRight_toRightOf="@+id/imgDukung"
+    app:layout_constraintTop_toBottomOf="@+id/imgDukung" />
+
+  <TextView
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Konsultasi Gratis"
+    android:textColor="@android:color/black"
+    app:layout_constraintBottom_toBottomOf="@+id/imgForum"
+    app:layout_constraintLeft_toLeftOf="@+id/imgForum"
+    app:layout_constraintRight_toRightOf="@+id/imgForum"
+    app:layout_constraintTop_toBottomOf="@+id/imgForum" />
+
+</android.support.constraint.ConstraintLayout>
