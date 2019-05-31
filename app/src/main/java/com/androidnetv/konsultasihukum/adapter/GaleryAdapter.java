@@ -45,7 +45,7 @@ public class GaleryAdapter extends Adapter<ViewHolder> {
     final GaleryItem galeryItem = items.get(position);
     RequestOptions options = new RequestOptions().fitCenter().format(DecodeFormat.PREFER_ARGB_8888);
     Glide.with(context)
-        .load(Server.BASE_URL_IMG + galeryItem.getGaleryImg())
+        .load(Server.BASE_URL_IMG_GALERY + galeryItem.getGaleryImg())
         .apply(options)
         .into(viewHolder.imgGaleryItem);
     viewHolder.txtGaleryItem.setText(galeryItem.getGaleryTitle());

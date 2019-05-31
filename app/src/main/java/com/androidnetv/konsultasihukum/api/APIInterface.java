@@ -1,5 +1,6 @@
 package com.androidnetv.konsultasihukum.api;
 
+import com.androidnetv.konsultasihukum.data.RegisterResponse;
 import com.androidnetv.konsultasihukum.data.Response;
 import com.androidnetv.konsultasihukum.data.answer.AnswerResponse;
 import com.androidnetv.konsultasihukum.data.ask.AskResponse;
@@ -47,7 +48,7 @@ public interface APIInterface {
 
   @FormUrlEncoded
   @POST("user_register.php")
-  Call<Response> getRegister(
+  Call<RegisterResponse> getRegister(
       @Field("user_name") String username,
       @Field("user_fullname") String fullname,
       @Field("user_password") String password,

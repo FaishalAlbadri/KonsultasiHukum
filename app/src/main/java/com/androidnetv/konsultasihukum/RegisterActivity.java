@@ -13,9 +13,7 @@ import butterknife.OnClick;
 import com.androidnetv.konsultasihukum.api.APIClient;
 import com.androidnetv.konsultasihukum.api.APIInterface;
 import com.androidnetv.konsultasihukum.api.Server;
-import com.androidnetv.konsultasihukum.data.user.UserItem;
-import com.androidnetv.konsultasihukum.data.user.UserResponse;
-import java.util.List;
+import com.androidnetv.konsultasihukum.data.RegisterResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -86,7 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
 
   private void getRegister() {
     APIInterface apiInterface = APIClient.getRetrofit().create(APIInterface.class);
-    final Call<com.androidnetv.konsultasihukum.data.Response> responseCall = apiInterface
+    final Call<RegisterResponse> responseCall = apiInterface
         .getRegister
             (edtUsername.getText().toString(),
                 edtNama.getText().toString(),
@@ -94,22 +92,23 @@ public class RegisterActivity extends AppCompatActivity {
                 edtMail.getText().toString(),
                 edtLahir.getText().toString(),
                 edtGender.getText().toString());
-    responseCall.enqueue(new Callback<com.androidnetv.konsultasihukum.data.Response>() {
+    responseCall.enqueue(new Callback<RegisterResponse>() {
       @Override
-      public void onResponse(Call<com.androidnetv.konsultasihukum.data.Response> call,
-          Response<com.androidnetv.konsultasihukum.data.Response> response) {
-        if (response.body().getMsg().equals("Register Berhasil")) {
+      public void onResponse(Call<RegisterResponse> call,
+          Response<RegisterResponse> response) {
+        if (response.body().getMsg().equals("Berhasil")) {
           progressDialog.dismiss();
           Toast.makeText(RegisterActivity.this, "Register Berhasil", Toast.LENGTH_SHORT).show();
           onBackPressed();
         } else {
           progressDialog.dismiss();
-          Toast.makeText(RegisterActivity.this, response.body().getMsg(), Toast.LENGTH_SHORT).show();
+          Toast.makeText(RegisterActivity.this, response.body().getMsg(), Toast.LENGTH_SHORT)
+              .show();
         }
       }
 
       @Override
-      public void onFailure(Call<com.androidnetv.konsultasihukum.data.Response> call, Throwable t) {
+      public void onFailure(Call<RegisterResponse> call, Throwable t) {
         progressDialog.dismiss();
         Toast.makeText(RegisterActivity.this, "Cek Koneksi Internet", Toast.LENGTH_SHORT).show();
       }

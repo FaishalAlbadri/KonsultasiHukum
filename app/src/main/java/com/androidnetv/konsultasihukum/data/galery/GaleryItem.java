@@ -9,9 +9,6 @@ public class GaleryItem{
 	@SerializedName("galery_img")
 	private String galeryImg;
 
-	@SerializedName("galery_date")
-	private String galeryDate;
-
 	@SerializedName("galery_title")
 	private String galeryTitle;
 
@@ -24,14 +21,6 @@ public class GaleryItem{
 
 	public String getGaleryImg(){
 		return galeryImg;
-	}
-
-	public void setGaleryDate(String galeryDate){
-		this.galeryDate = galeryDate;
-	}
-
-	public String getGaleryDate(){
-		return galeryDate;
 	}
 
 	public void setGaleryTitle(String galeryTitle){
@@ -52,11 +41,10 @@ public class GaleryItem{
 
 	@Override
  	public String toString(){
-		return 
-			"GaleryItem{" + 
-			"galery_img = '" + galeryImg + '\'' + 
-			",galery_date = '" + galeryDate + '\'' + 
-			",galery_title = '" + galeryTitle + '\'' + 
+		return
+        "GaleryItem{" +
+            "galery_img = '" + galeryImg + '\'' +
+            ",galery_title = '" + galeryTitle + '\'' +
 			",id_galery = '" + idGalery + '\'' + 
 			"}";
 		}

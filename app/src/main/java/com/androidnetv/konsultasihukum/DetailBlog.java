@@ -31,7 +31,7 @@ public class DetailBlog extends AppCompatActivity {
     setTitle(titlle);
     RequestOptions options = new RequestOptions().fitCenter().format(DecodeFormat.PREFER_ARGB_8888);
     Glide.with(this)
-        .load(Server.BASE_URL_IMG + img)
+        .load(Server.BASE_URL_IMG_BLOG + img)
         .apply(options)
         .into(imgBlog);
     txtIsiDetail.setText(isi);

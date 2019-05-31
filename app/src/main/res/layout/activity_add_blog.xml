@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:layout_margin="16dp"
+  tools:context=".AddBlog">
+
+  <android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+      android:id="@+id/imgAddBlog"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:src="@drawable/ic_add_photo"
+      app:layout_constraintDimensionRatio="4:2"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+      android:id="@+id/edtTitleBlog"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:gravity="top"
+      android:hint="Judul"
+      android:maxLength="50"
+      android:maxLines="1"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/imgAddBlog" />
+
+    <EditText
+      android:id="@+id/edtIsiBlog"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:gravity="top"
+      android:hint="Isi Berita"
+      android:lines="10"
+      android:maxLength="50"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/edtTitleBlog" />
+
+    <Button
+      android:id="@+id/btnAddBlog"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:background="@color/colorPrimaryDark"
+      android:text="Kirim"
+      android:textColor="@android:color/white"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/edtIsiBlog" />
+
+  </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

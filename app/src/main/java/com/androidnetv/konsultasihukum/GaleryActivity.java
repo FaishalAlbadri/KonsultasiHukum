@@ -3,13 +3,17 @@ package com.androidnetv.konsultasihukum;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import com.androidnetv.konsultasihukum.Util.SessionManger;
 import com.androidnetv.konsultasihukum.adapter.GaleryAdapter;
 import com.androidnetv.konsultasihukum.api.APIClient;
 import com.androidnetv.konsultasihukum.api.APIInterface;
@@ -17,6 +21,7 @@ import com.androidnetv.konsultasihukum.api.Server;
 import com.androidnetv.konsultasihukum.data.galery.GaleryItem;
 import com.androidnetv.konsultasihukum.data.galery.GaleryResponse;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,6 +36,11 @@ public class GaleryActivity extends AppCompatActivity {
   ProgressDialog progressDialog;
   GaleryAdapter galeryAdapter;
   ArrayList<GaleryItem> arrayList;
+  @BindView(R.id.add_galery)
+  FloatingActionButton addGalery;
+  SessionManger sessionManger;
+  HashMap<String, String> user;
+  String user_name;
 
 
   @Override
@@ -44,6 +54,12 @@ public class GaleryActivity extends AppCompatActivity {
 
   private void setView() {
     setTitle("Galeri");
+    sessionManger = new SessionManger(GaleryActivity.this);
+    user = sessionManger.getUser();
+    user_name = user.get(SessionManger.key_user_name);
+    if (user_name.equals("admin")) {
+      addGalery.setVisibility(View.VISIBLE);
+    }
     progressDialog = new ProgressDialog(this);
     progressDialog.setMessage("Loading");
     progressDialog.setCancelable(false);
@@ -99,6 +115,12 @@ public class GaleryActivity extends AppCompatActivity {
   @Override
   public void onBackPressed() {
     startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    finish();
+  }
+
+  @OnClick(R.id.add_galery)
+  public void onViewClicked() {
+    startActivity(new Intent(getApplicationContext(), AddGalery.class));
     finish();
   }
 }
