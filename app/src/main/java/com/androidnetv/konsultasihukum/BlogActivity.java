@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,6 +51,12 @@ public class BlogActivity extends AppCompatActivity {
     setTitle("Blog");
     setView();
     getBlog();
+  }
+
+  public void cekUser(Button buttonDelete) {
+    if (user_name.equals("admin")) {
+      buttonDelete.setVisibility(View.VISIBLE);
+    }
   }
 
   private void setView() {
@@ -105,6 +112,32 @@ public class BlogActivity extends AppCompatActivity {
 
       @Override
       public void onFailure(Call<BlogResponse> call, Throwable t) {
+        progressDialog.dismiss();
+        Toast.makeText(BlogActivity.this, "Cek Koneksi Internet", Toast.LENGTH_SHORT).show();
+      }
+    });
+  }
+
+  public void deleteBlog(String id_blog) {
+    progressDialog.show();
+    APIInterface apiInterface = APIClient.getRetrofit().create(APIInterface.class);
+    final Call<com.androidnetv.konsultasihukum.data.Response> responseCall = apiInterface
+        .deleteBlog(id_blog);
+    responseCall.enqueue(new Callback<com.androidnetv.konsultasihukum.data.Response>() {
+      @Override
+      public void onResponse(Call<com.androidnetv.konsultasihukum.data.Response> call,
+          Response<com.androidnetv.konsultasihukum.data.Response> response) {
+        if (response.body().getMsg().equals("terhapus")) {
+          Toast.makeText(BlogActivity.this, "Berhasil Dihapus", Toast.LENGTH_SHORT).show();
+          getBlog();
+        } else {
+          progressDialog.dismiss();
+          Toast.makeText(BlogActivity.this, "Gagal Dihapus", Toast.LENGTH_SHORT).show();
+        }
+      }
+
+      @Override
+      public void onFailure(Call<com.androidnetv.konsultasihukum.data.Response> call, Throwable t) {
         progressDialog.dismiss();
         Toast.makeText(BlogActivity.this, "Cek Koneksi Internet", Toast.LENGTH_SHORT).show();
       }

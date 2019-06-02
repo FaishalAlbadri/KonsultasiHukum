@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,6 +51,12 @@ public class GaleryActivity extends AppCompatActivity {
     ButterKnife.bind(this);
     setView();
     getGaleri();
+  }
+
+  public void cekUser(Button buttonDelete) {
+    if (user_name.equals("admin")) {
+      buttonDelete.setVisibility(View.VISIBLE);
+    }
   }
 
   private void setView() {
@@ -106,6 +113,32 @@ public class GaleryActivity extends AppCompatActivity {
 
       @Override
       public void onFailure(Call<GaleryResponse> call, Throwable t) {
+        progressDialog.dismiss();
+        Toast.makeText(GaleryActivity.this, "Cek Koneksi Internet", Toast.LENGTH_SHORT).show();
+      }
+    });
+  }
+
+  public void deleteGalery(String id_galery) {
+    progressDialog.show();
+    APIInterface apiInterface = APIClient.getRetrofit().create(APIInterface.class);
+    final Call<com.androidnetv.konsultasihukum.data.Response> responseCall = apiInterface
+        .deleteGalery(id_galery);
+    responseCall.enqueue(new Callback<com.androidnetv.konsultasihukum.data.Response>() {
+      @Override
+      public void onResponse(Call<com.androidnetv.konsultasihukum.data.Response> call,
+          Response<com.androidnetv.konsultasihukum.data.Response> response) {
+        if (response.body().getMsg().equals("terhapus")) {
+          Toast.makeText(GaleryActivity.this, "Berhasil Dihapus", Toast.LENGTH_SHORT).show();
+          getGaleri();
+        } else {
+          progressDialog.dismiss();
+          Toast.makeText(GaleryActivity.this, "Gagal Dihapus", Toast.LENGTH_SHORT).show();
+        }
+      }
+
+      @Override
+      public void onFailure(Call<com.androidnetv.konsultasihukum.data.Response> call, Throwable t) {
         progressDialog.dismiss();
         Toast.makeText(GaleryActivity.this, "Cek Koneksi Internet", Toast.LENGTH_SHORT).show();
       }

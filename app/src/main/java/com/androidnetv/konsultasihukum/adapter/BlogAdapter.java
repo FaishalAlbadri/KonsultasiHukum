@@ -1,5 +1,6 @@
 package com.androidnetv.konsultasihukum.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -45,12 +46,16 @@ public class BlogAdapter extends Adapter<ViewHolder> {
     final BlogItem blogItem = items.get(position);
     viewHolder.txtIsi.setText(blogItem.getBlogNews());
     viewHolder.txtTitle.setText(blogItem.getBlogTitle());
-    viewHolder.btnDetail.setOnClickListener( v -> {
+    viewHolder.btnDetail.setOnClickListener(v -> {
       Intent i = new Intent(v.getContext(), DetailBlog.class);
       i.putExtra("title", blogItem.getBlogTitle());
       i.putExtra("isi", blogItem.getBlogNews());
       i.putExtra("img", blogItem.getBlogImg());
       v.getContext().startActivity(i);
+    });
+    ((BlogActivity) context).cekUser(viewHolder.btnDelete);
+    viewHolder.btnDelete.setOnClickListener(v -> {
+      ((BlogActivity) context).deleteBlog(blogItem.getIdBlog());
     });
   }
 
@@ -60,12 +65,16 @@ public class BlogAdapter extends Adapter<ViewHolder> {
   }
 
   public class ViewHolder extends RecyclerView.ViewHolder {
+
     @BindView(R.id.txtTitle)
     TextView txtTitle;
     @BindView(R.id.txtIsi)
     TextView txtIsi;
     @BindView(R.id.btnDetail)
     Button btnDetail;
+    @BindView(R.id.btnDelete)
+    Button btnDelete;
+
     public ViewHolder(@NonNull View itemView) {
       super(itemView);
       ButterKnife.bind(this, itemView);

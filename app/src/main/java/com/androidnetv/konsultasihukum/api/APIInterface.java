@@ -23,6 +23,16 @@ public interface APIInterface {
       @Field("user_password") String password);
 
   @FormUrlEncoded
+  @POST("delete_blog.php")
+  Call<Response> deleteBlog(
+      @Field("id_blog") String id_blog);
+
+  @FormUrlEncoded
+  @POST("delete_galery.php")
+  Call<Response> deleteGalery(
+      @Field("id_galery") String id_galery);
+
+  @FormUrlEncoded
   @POST("add_question.php")
   Call<Response> addQuestion(
       @Field("user_name") String username,

@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import butterknife.BindView;
@@ -49,6 +50,10 @@ public class GaleryAdapter extends Adapter<ViewHolder> {
         .apply(options)
         .into(viewHolder.imgGaleryItem);
     viewHolder.txtGaleryItem.setText(galeryItem.getGaleryTitle());
+    ((GaleryActivity) context).cekUser(viewHolder.btnDelete);
+    viewHolder.btnDelete.setOnClickListener(v -> {
+      ((GaleryActivity) context).deleteGalery(galeryItem.getIdGalery());
+    });
   }
 
   @Override
@@ -62,6 +67,8 @@ public class GaleryAdapter extends Adapter<ViewHolder> {
     ImageView imgGaleryItem;
     @BindView(R.id.txtGaleryItem)
     TextView txtGaleryItem;
+    @BindView(R.id.btnDelete)
+    Button btnDelete;
 
     public ViewHolder(@NonNull View itemView) {
       super(itemView);
