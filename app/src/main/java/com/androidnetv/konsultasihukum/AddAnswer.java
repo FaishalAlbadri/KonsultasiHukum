@@ -40,7 +40,7 @@ public class AddAnswer extends AppCompatActivity {
   }
 
   private void setView() {
-    setTitle("Answer");
+    setTitle("Jawab");
     id_ask = getIntent().getStringExtra("id");
     userr = getIntent().getStringExtra("username");
     askk = getIntent().getStringExtra("ask");

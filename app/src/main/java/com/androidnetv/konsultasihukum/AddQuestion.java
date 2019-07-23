@@ -40,7 +40,7 @@ public class AddQuestion extends AppCompatActivity {
   }
 
   private void setView() {
-    setTitle("Ask Now");
+    setTitle("Ajukan Pertanyaan");
     sessionManger = new SessionManger(AddQuestion.this);
     user = sessionManger.getUser();
     user_name = user.get(SessionManger.key_user_name);
